@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+ 
+int main()
+{
+    std::vector<int> v = { 7, 2, 2, 4, 3, 2, 6 };
+    int val = 2;
+ 
+    int freq = std::count(v.begin(), v.end(), val);
+    std::cout << "Element " << val << " occurs " << freq << " times";
+ 
+    return 0;
+}
