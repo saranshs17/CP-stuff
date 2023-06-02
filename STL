@@ -1,11 +1,15 @@
 //pair 
+
 --> creating pair:pair<int,string>p 
 --> passing reference(changes in this will occur to org also) into another pair : pair<int,string>&p1=p;
 --> passing copy(changes in this will not occur to org also) into another pair : pair<int,string>p2=p;
 --> creating array of pair: pair<int,int>p_arr[size],, input p_arr[0]={a,b};
 --> swap two pos of array of pair:swap(p_arr[0],p_arr[1]);
 --> printing array of pair : cout<<p_arr[0].first;
+
+
 //vector
+
 --> creating vector: vector<int> v;
 --> adding element to vector : v.push_back(5);
 --> passing refernce to vector &v2=v, passing copy v3=v;
