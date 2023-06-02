@@ -47,8 +47,16 @@
                                   for(int j=0;j<v[i].size();++j){
                                   cout<<v[i][j];}}                                                       
                                                         
-                                                        
-                                                        
+//iterator        
+-->creating iterator of vector : vector<int>::iterator it;
+--> printing element of vector using iterator : for(it=v.begin();it!=v.end();++it){
+                                                cout<<(*it)<<ln;
+                                                }
+--> for pair: vector<pair<int,int>> vp={{1,2},{3,4},{5,6}}
+              vector<pair<int,int>> :: iterator it;
+              for(it=vp.begin();it!=vp.end();++it){
+              cout<<(*it).first<<(*it).second<<ln or cout<<(it->first)<<(it->second)<<ln;
+              }
                                                         
                                                         
                                                         
