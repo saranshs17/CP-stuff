@@ -57,9 +57,55 @@
               for(it=vp.begin();it!=vp.end();++it){
               cout<<(*it).first<<(*it).second<<ln or cout<<(it->first)<<(it->second)<<ln;
               }
-                                                        
-                                                        
-                                                        
+
+// range controlled loop 
+--> for(int(data type) value(copy of every element of vector here):v){
+        cout<<value;
+    } 
+--> for(pair<int,int> &value:v)cout<<value.first;
+--> for(auto value:v)cout<<value;
+
+//map
+* key is unique so if it is re-assigned then it will be overwritten
+--> map<int,string> m; // map is a key-value pair  
+    m[1]="abc";  // TC: O(log(n))  --> m[6] means key 6 has an empty string or number 0 
+    m[5]="cab";
+    m[2]="bcd";
+    m.insert({4,"dca"}); // always prints in sorted order of key or lexiographically
+    map<int,string>::iterator it;
+    for(it=m.begin();it!=m.end();++it){   // can't use it=it+1
+        cout<<it->first<<" "<<it->second<<ln;
+    } 
+or  
+    for(auto it=m.begin();it!=m.end();++it){
+        cout<<it->first<<" "<<it->second<<ln;
+    }
+or  
+    for(auto &pr:m)cout<<pr.first<<" "<<pr.second<<ln;
+--> for finding value -->auto it=m.find('b');
+                         if(it==m.end())cout<<"no value"; //execute if key not exist
+                         else cout<<it->second;
+                      --> auto it=find('d');
+                          if(it!=m.end())
+                          m.erase(it); // will remove 'd' and its value if it present
+--> unordered_map -->> 1.inbuilt implementation // complex function can't use
+                       2. less time complexity // O(1) 
+                       3. valid keys datatype
+                  --> unordered_map<int,string> m; //rando m order 
+--> multimap-->> to store multiple value of same key
+
+// ordered set : sorted order lexiographically and only one times i.e. unique
+-->set<string> s;
+   s.insert("abc");
+   for(auto val:s)cout<<val<<ln;
+--> has erase function and find function ,works like map
+
+//unordered set --> complex function can't use 
+                --> to check the presence i.e. order not matter // less time complexity
+
+// multiset --> to print duplicate values 
+
+**Note: while erasing using iterator it will delete only one value but when delete using value it will delete all element having that value
                                                         
                                                         
                                                         
