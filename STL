@@ -106,7 +106,22 @@ or
 // multiset --> to print duplicate values 
 
 **Note: while erasing using iterator it will delete only one value but when delete using value it will delete all element having that value
-                                                        
+
+//Stack-->LIFO data structure i.e. Last in First out
+          3 function push -> to insert the value in stack
+                     pop  -> to delete the value from stack
+                     top  -> to access the value of topmost element
+      --> code: stack<int> s;
+                s.push(1);s.push(2);s.push(3);s.push(4);
+                while(!s.empty()) cout<<s.top()<<ln;s.pop();
+
+//Queue-->FIFO data structure i.e. First in First out
+          3 function push -> to insert the value in queue
+                     pop  -> to delete the value from queue
+                     front  -> to access the value of frontmost element
+      --> code: queue<int> q;
+                q.push(1);q.push(2);q.push(3);q.push(4);
+                while(!q.empty()) cout<<s.front()<<ln;q.pop();
                                                         
                                                         
                                                         
