@@ -48,6 +48,7 @@
                                   cout<<v[i][j];}}                                                       
                                                         
 //iterator        
+
 -->creating iterator of vector : vector<int>::iterator it;
 --> printing element of vector using iterator : for(it=v.begin();it!=v.end();++it){
                                                 cout<<(*it)<<ln;
@@ -59,6 +60,7 @@
               }
 
 // range controlled loop 
+
 --> for(int(data type) value(copy of every element of vector here):v){
         cout<<value;
     } 
@@ -66,6 +68,7 @@
 --> for(auto value:v)cout<<value;
 
 //map
+
 * key is unique so if it is re-assigned then it will be overwritten
 --> map<int,string> m; // map is a key-value pair  
     m[1]="abc";  // TC: O(log(n))  --> m[6] means key 6 has an empty string or number 0 
@@ -95,12 +98,14 @@ or
 --> multimap-->> to store multiple value of same key
 
 // ordered set : sorted order lexiographically and only one times i.e. unique
+
 -->set<string> s;
    s.insert("abc");
    for(auto val:s)cout<<val<<ln;
 --> has erase function and find function ,works like map
 
 //unordered set --> complex function can't use 
+
                 --> to check the presence i.e. order not matter // less time complexity
 
 // multiset --> to print duplicate values 
@@ -108,6 +113,7 @@ or
 **Note: while erasing using iterator it will delete only one value but when delete using value it will delete all element having that value
 
 //Stack-->LIFO data structure i.e. Last in First out
+
           3 function push -> to insert the value in stack
                      pop  -> to delete the value from stack
                      top  -> to access the value of topmost element
@@ -116,15 +122,19 @@ or
                 while(!s.empty()) cout<<s.top()<<ln;s.pop();
 
 //Queue-->FIFO data structure i.e. First in First out
+
           3 function push -> to insert the value in queue
                      pop  -> to delete the value from queue
                      front  -> to access the value of frontmost element
       --> code: queue<int> q;
                 q.push(1);q.push(2);q.push(3);q.push(4);
                 while(!q.empty()) cout<<s.front()<<ln;q.pop();
-                                                        
-                                                        
-                                                        
+
+//Lower and UpperBound
+  --> lowerbound--> int *ptr=lower_bound(a,a+n,5) // a is an array of n elements , so here we are finding lower bound of  5 , hence it will return either 5 or number greater than it
+  --> upperbound--> int *ptr=upper_bound(a,a+n,5) // a is an array of n elements , so here we are finding upper bound of  5 , hence it will return number greater than it
+
+Note:- it will return pointer in case of array and will return itereator in case of vector
                                                         
                                                         
                                                         
