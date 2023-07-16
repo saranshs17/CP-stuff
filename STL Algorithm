@@ -1,0 +1,23 @@
+For Vectors 
+
+-> int min=*min_element(v.begin()+2,v.end()); // give the minimum number in a vector
+cout<<min;
+
+-> int max=*max_element(v.begin()+2,v.end()); // give the maximum number in a vector
+cout<<max;
+
+-> int sum=accumulate(v.begin(),v.end(),0); // where 0 is initial sum i.e. sum=0 initially
+cout<<sum;
+
+-> int count=count(v.begin(),v.end(),4); // where 4 is the element whose count is needed
+cout<<count;
+
+-> auto it=find(v.begin(),v.end(),2) // will return iterator of 2 if present otherwise will be equal to v.end()
+
+-> reverse(v.begin(),v.end()); // will reverse the vector 
+-> reverse(s.begin()+2,s.end()); // will reverse string from 2 element to last and first element will remain intact
+
+For Arrays
+
+-> just replace v.begin() == a
+              v.end() == a+n
