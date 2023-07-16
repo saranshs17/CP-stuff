@@ -139,3 +139,12 @@ ex: vector<int> a(n)
     sort(a.begin(),a.end())
     auto it=upper_bound(a.begin(),a.end(),5)
     if(it==a.end())cout<<"Not found"<<ln; cout<<(*it)<<ln;
+ex: as sets and map are already sorted so no need of sorting
+    -->set: set<int> s;
+            auto it =s.upper_bound(5);
+            cout<<(*it)<<ln;
+    -->map: map<int,int>mp       // but only aplies on key 
+            int key=5;
+            auto it=mp.upper_bound(key);
+            if(it!=mp.end())cout<<"key-value:"<<it->first<<" "<<it->second<<ln;
+            else cout<<"No upper bound find for the key "<<key<<ln;
