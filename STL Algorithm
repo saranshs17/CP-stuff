@@ -13,6 +13,7 @@ cout<<sum;
 cout<<count;
 
 -> auto it=find(v.begin(),v.end(),2) // will return iterator of 2 if present otherwise will be equal to v.end()
+-> v.erase(it); // will remove that number
 
 -> reverse(v.begin(),v.end()); // will reverse the vector 
 -> reverse(s.begin()+2,s.end()); // will reverse string from 2 element to last and first element will remain intact
