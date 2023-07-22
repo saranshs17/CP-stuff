@@ -1,8 +1,4 @@
 #include<bits/stdc++.h>
-#define tstart auto start = high_resolution_clock::now();
-#define tstop auto stop = high_resolution_clock::now();
-#define tduration auto duration = duration_cast<microseconds>(stop - start);
-#define tprint cout << "Time taken by function: "<< duration.count()<< " microseconds" << endl;
 #define sped ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL); 
 #define ln '\n'
 #define ll long long
