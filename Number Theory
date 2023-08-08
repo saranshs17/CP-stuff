@@ -1,0 +1,11 @@
+// Modular arithematic formulae
+  1. (a+b) % M =((a % M ) + (b % M)) % M
+  2. (a*b) % M =((a % M ) * (b % M)) % M
+  3. (a-b) % M =((a % M ) - (b % M) + M) % M
+  4. (a/b) % M =((a % M ) * (b^-1 % M)) % M  // b^-1 multiplicative inverse ,calculate using binary exponentiation
+  example. ll fact=1;
+            loop(n){
+                fact = (fact * i) % M;
+            } cout<< fact;
+// significance 10^9+7 : 1. is very close to INT_MAX means final ans can be stored in int ll not needed4
+                         2. prime number so Multiplicative inverse can bre found easily
