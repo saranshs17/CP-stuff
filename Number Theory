@@ -37,4 +37,41 @@
                 cout<<__builtin_popcount(1LL<<35)<<ln; // output will be 0 or runtime error as integer cant store long long 
                 //3. built in function for long long value
                 cout<<__builtin_popcountll(1LL<<35)<<ln; //output 1
+// Bit Manipulation Tricks
+                --> // checking odd/even
+                    if(n&1) odd; //taking and of 1 with 0th bit so if if is 1 then odd else 0 is for even
+                    else even;
+                --> // multiplying dividing by 2 
+                    cout<< n>>2; // divide by 2
+                    cout<< n<<2; // multiply by 2
+                --> // lower case to uppercase conversion vice versa
+                    char A = 'A'
+                    char a = A | (1<<5) // to rem: as a has more ascii value so bigger binary number  so it will(all lower case alphabets) have bit set (or 1) at 5th index
+                    cout<< a; // prints a 
+                    cout<< char(a&(~(1<<5))); // prints A
+-->Note: we can use character instead of '_'(underscore) or ' '(space). 
+                    ex : 
+                    cour<<char('A'|' '); // prints a
+                    cout<<char('a'&'_'); // prints A
+// MSB(Most significant bit) --> rightmost set bit and LSB(Least Significant Bit)--> set bit
+                    ex:00000100001 , so MSB=5th bit and LSB=0th bit
+                 -->implementation
+                    int num;
+                  	int LSB,MSB;
+                  	cin>>num>>LSB>>MSB;
+                  	printBinary(num);
+                  	printBinary(num&(~((1<<(LSB+1))-1))); //prints till LSB
+                    printBinary(num&(((1<<(MSB+1))-1))); //prints till MSB
+                    ex:00000111011  // num = 59
+                       00000100000  // LSB = 4
+                       00000001011  // MSB = 3 
+                    // means MSB+LSB = num
 
+// check power of 2 
+                    int n;
+                    cin>>n;
+                  	if(n & (n-1)){   // 00001 & 10000 = 00000 as n = 1 
+	                  	cout<<" not power of two"; 
+	                  }else{
+	                  	cout<<"power of two";
+	                  }
