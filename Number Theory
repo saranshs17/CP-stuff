@@ -1,4 +1,4 @@
-// Modular arithematic formulae
+  // Modular arithematic formulae
   1. (a+b) % M =((a % M ) + (b % M)) % M
   2. (a*b) % M =((a % M ) * (b % M)) % M
   3. (a-b) % M =((a % M ) - (b % M) + M) % M
@@ -9,3 +9,32 @@
             } cout<< fact;
 // significance 10^9+7 : 1. is very close to INT_MAX means final ans can be stored in int ll not needed4
                          2. prime number so Multiplicative inverse can bre found easily
+//Set, Unset, Count Bits
+
+//Set bit  -->check at k
+              if((n & (1<<k)) != 0){
+            	cout<<"set bit"<<ln;
+              }else{
+            	cout<<"not set bit"<<ln;
+               }
+          -->  // bit set at i 
+                printBinary(n | (1<<i));
+//Bit Unset 
+                // bit unset at j using tilda~
+                printBinary( n & ~(1<<j));
+                // toggle using xor (0->1 and 1->0) at s
+                printBinary(n^(1<<s));
+// counting bit set
+                //1.
+                int ct=0;
+                 for(int i=31;i>=0;i--){
+               	if((n & (1<<i)) != 0){
+            		ct++;
+              	}
+                }
+                cout<<ct<<ln;
+                //2. built in funtion for integer value
+                cout<<__builtin_popcount(1LL<<35)<<ln; // output will be 0 or runtime error as integer cant store long long 
+                //3. built in function for long long value
+                cout<<__builtin_popcountll(1LL<<35)<<ln; //output 1
+
