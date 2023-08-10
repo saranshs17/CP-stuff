@@ -75,3 +75,14 @@
 	                  }else{
 	                  	cout<<"power of two";
 	                  }
+// swapping number using XOR 
+		    int a,b; cin>>a>>b;
+		    a=a^b;
+		    b=b^a;
+                    a=a^b;
+// XOR of a ^ a = 0 property 
+                    ex: find number of odd count from an array containing n numbers and n-1 are in even count(duplicates)
+		    solution: O(N) TC and O(1) SC 
+			    -->int res=a[0]; 
+			       for(int i=1;i<n;++i) res^=a[i];
+			       cout<<res;
