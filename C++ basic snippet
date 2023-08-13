@@ -7,8 +7,8 @@
 #define loop(n) for(unsigned int i=0; i<n; ++i)
 using namespace std;
 const long long M=1e9+7;
-const int N = 1e7+10;
-vector<bool> isPrime(N,1);
+const int N = 1000000;
+vector<bool> isPrime(N+1,1);
 
 //<---------------------------code begins--------------------------->
 
