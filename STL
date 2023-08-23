@@ -45,7 +45,13 @@
                                                         
 -->printing vector of vector: --> for(int i=0;i<N;i++){
                                   for(int j=0;j<v[i].size();++j){
-                                  cout<<v[i][j];}}                                                       
+                                  cout<<v[i][j];}}
+                              --> for(auto x : v){
+    	                            for(int ele:x){
+    		                                cout<<ele<<" ";
+    	                                }
+    	                                cout<<ln;
+                                  }
                                                         
 //iterator        
 
