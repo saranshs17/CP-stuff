@@ -88,6 +88,7 @@
 			       cout<<res;
 
 // Bit Masking ( ONLY for numbers less than  = 31 if int is use else for only <= 63 if long is used )
+		|-> means in the below example here number of fruits should be less than 32
 		    --> for storing data instead of using STL we can store data in the form of binaries which is equivalent to a number
 			ex: We have an total count of vector<vector<int>> v(3)  ( 0-> banana , 1-> apple , 2-> oranges , 4-> Mango)
 			    Person 1 have -> banana,Mango -> v[0] = { 0 , 3}
