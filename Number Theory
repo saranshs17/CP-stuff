@@ -86,3 +86,38 @@
 			    -->int res=a[0]; 
 			       for(int i=1;i<n;++i) res^=a[i];
 			       cout<<res;
+
+// Bit Masking ( ONLY for numbers less than  = 31 if int is use else for only <= 63 if long is used )
+		    --> for storing data instead of using STL we can store data in the form of binaries which is equivalent to a number
+			ex: We have an total count of vector<vector<int>> v(3)  ( 0-> banana , 1-> apple , 2-> oranges , 4-> Mango)
+			    Person 1 have -> banana,Mango -> v[0] = { 0 , 3}
+			    Person 2 have -> apple,Mango,oranges -> v[1] = { 1 , 2 , 3}
+			    Person 3 have -> apple -> v[2] = {1}
+			Now for finding common we will have to traverse more  with difficulty to find maximum common
+			So, here we can see vector<vector<int>> is created to store this data but we can store this in only one vector with the help of Bit Masking Technique
+			->> Person 1 -> set bit at 0 and 3 --> 000001001 = 9 (so 9 will be stored)  // a.k.a mask
+			    ex: int n;  
+    				cin>>n;   // here for person 1 , n = 2 as he has two fruits.
+    				int mask=0;
+    				loop(2){
+    					int fruit;
+    					cin>>fruit;   // 0 and 3
+    					mask=(mask | (1<<fruit));
+    				}
+    				masks.push_back(mask);
+
+			    Person 2 -> set bit at 1 , 2 and 3 --> 000001101 = 13 (so 9 will be stored)
+			    Person 3 -> set bit at 1 --> 000000001 = 1 (so 9 will be stored)
+
+			--> Now for finding common will be using 
+			    --> 
+				int max_common=INT_MIN;
+    				loop(3){
+    				for(int j=i+1;j<3;++j){
+    					int intersection=(masks[i] & masks[j]);
+    					int common_fruit = __builtin_popcount(intersection);
+    					max_common=max(max_common,common_fruit);
+    					}
+    				}
+				cout<<max_common<<ln;
+				
