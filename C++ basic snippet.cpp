@@ -4,6 +4,14 @@
 #define int long long
 #define f first
 #define s second
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define mii map<int, int>
+#define pii pair<int, int>
+#define vi vector<int>
+#define vpii vector<pii>
+#define vb vector<bool>
+#define vvi vector<vi>
 #define loop(n) for(int i=0; i<n; ++i)
 #define rep(i,begin,end) for(int i=begin;i<end;++i)
 using namespace std;
