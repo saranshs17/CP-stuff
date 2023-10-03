@@ -12,6 +12,8 @@
 #define vpii vector<pii>
 #define vb vector<bool>
 #define vvi vector<vi>
+#define mx(v) *max_element(v.begin(),v.end())
+#define mn(v) *min_element(v.begin(),v.end())
 #define loop(n) for(int i=0; i<n; ++i)
 #define rep(i,begin,end) for(int i=begin;i<end;++i)
 using namespace std;
