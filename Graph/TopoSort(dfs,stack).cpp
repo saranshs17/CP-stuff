@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> 
 void dfs(int node,stack<int> &s,vector<int> &vis,vector<vector<int>> &adj){
     vis[node]=1;
     for(auto x:adj[node]){
