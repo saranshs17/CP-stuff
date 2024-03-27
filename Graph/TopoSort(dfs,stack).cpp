@@ -5,7 +5,7 @@ void dfs(int node,stack<int> &s,vector<int> &vis,vector<vector<int>> &adj){
         if(!vis[x]){
             dfs(x,s,vis,adj);
         }
-    }
+    } 
     s.push(node);
 }
 vector<int> topologicalSort(vector<vector<int>> &graph, int edges, int nodes) {
