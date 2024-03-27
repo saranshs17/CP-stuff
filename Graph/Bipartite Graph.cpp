@@ -6,7 +6,7 @@ bool dfs(int node,int col,int color[],vector<vector<int>> adj){
 		}else if(color[x]==col)return false;
 	}
 	return true;
-}
+} 
 bool isGraphBirpatite(vector<vector<int>> &edges) {
 	int color[edges.size()];
 	for(int i=0;i<edges.size();++i)color[i]=-1;
