@@ -37,6 +37,9 @@ int LCA(int u,int v){
     }
     return up[u][0]; // here u and v not equal but thier par i.e. LCA is equal
 }
+int dist(int u,int v){                          
+    return level[u]+level[v]-2*level[LCA(u,v)];                     // calculate distance btw u and v in log n 
+}
 int32_t main() {
     //sieve();
     // SPF();
