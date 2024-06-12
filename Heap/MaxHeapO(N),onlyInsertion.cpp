@@ -26,4 +26,9 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<'\n';
+    priority_queue<int> pq(arr,arr+n); // O(N) me create ho jayega if convert whole array at once , but if inserted 1/1 then take NlogN
+    while(!pq.empty()){
+        cout<<pq.top()<<" ";
+        pq.pop();
+    }
 }
