@@ -3,7 +3,7 @@
     Trie* obj = new Trie();
     obj->insert(word);
     bool check2 = obj->search(word);
-    bool check3 = obj->startsWith(prefix);
+    bool check3 = obj->startsWith(prefix); 
  */
 
 struct Node{
