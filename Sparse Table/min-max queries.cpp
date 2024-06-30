@@ -108,7 +108,7 @@ void buildSt(vector<int> &data){
 	for(int l=1;l<=n;++l){
 		for(int j=1;j<21;++j){
 			int r=l+(1<<j)-1; // R=L+2^j-1 , width = 2^j
-			if(r>=n)break;
+			if(r>n)break;
 			stmn[l][j]=min(stmn[l][j-1],stmn[l+(1<<(j-1))][j-1]); // Break l..r into two intervals of width 2^(j-1)
 			stmx[l][j]=max(stmx[l][j-1],stmx[l+(1<<(j-1))][j-1]);
 		}
