@@ -88,38 +88,38 @@ for (int i = 2; i * i <= N; i++) {if (isprime[i]) {for (int j = i * i; j <= N; j
 //<---------------------------code begins--------------------------->
 const int NN=1e5+1;
 int lg[NN];
-int stmn[NN+1][21]; // log2(1e6) ~ 20
-int stmx[NN+1][21];
+int stmn[NN][21];
+int stmx[NN][21];
 void buildLog(){
 	lg[1]=0;
 	for(int i=2;i<=NN;++i){
-		lg[i]=1+lg[i/2]; // lg[i]=no.of time we can divide i by 2
+		lg[i]=1+lg[i/2];
 	}
 }
-void buildSt(vector<int> &data){
+void buildSt(vector<int>&data){
 	int n=data.size();
-	
-	// base case 
 	for(int i=1;i<=n;++i){
 		stmn[i][0]=data[i];
 		stmx[i][0]=data[i];
 	}
-	
-	for(int l=1;l<=n;++l){
-		for(int j=1;j<21;++j){
-			int r=l+(1<<j)-1; // R=L+2^j-1 , width = 2^j
+	for(int j=1;j<21;++j){
+		for(int l=1;l<=n;++l){
+			int r=l+(1<<j)-1;
 			if(r>n)break;
-			stmn[l][j]=min(stmn[l][j-1],stmn[l+(1<<(j-1))][j-1]); // Break l..r into two intervals of width 2^(j-1)
+			
+			stmn[l][j]=min(stmn[l][j-1],stmn[l+(1<<(j-1))][j-1]);
 			stmx[l][j]=max(stmx[l][j-1],stmx[l+(1<<(j-1))][j-1]);
 		}
 	}
 }
 int mnquery(int l,int r){
+	if(r<l) return 1e8;
 	int w=r-l+1;
 	int power=lg[w];
 	return min(stmn[l][power],stmn[r-(1<<power)+1][power]);
 }
 int mxquery(int l,int r){
+	if(r<l) return -1;
 	int w=r-l+1;
 	int power=lg[w];
 	return max(stmx[l][power],stmx[r-(1<<power)+1][power]);
