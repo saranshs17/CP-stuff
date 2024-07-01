@@ -5,6 +5,7 @@
 // Time Limit: 2000 ms
 // Author: alchemist_17
 
+ // Note : this code is modified as , in problem statement has asked to provide full range query i.e. answer of whole array , but i have implemented range query as well
 
 #include<bits/stdc++.h>
 // #include <ext/pb_ds/assoc_container.hpp>
