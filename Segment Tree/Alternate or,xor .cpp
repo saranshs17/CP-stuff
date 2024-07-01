@@ -121,31 +121,65 @@ void update(int index,int lo,int hi,int i,int &val,int do_or){
 		seg[index]=seg[2*index+1] ^ seg[2*index+2];
 	}
 }
-int32_t main(){
-    //sieve();
-    // SPF();
+int query(int index, int lo, int hi, int L, int R, int do_or) {
+    if (lo > R || hi < L) {
+        // If this segment is outside the query range, return the identity element
+        return (do_or ? 0 : 0);
+    }
+    if (lo >= L && hi <= R) {
+        // If this segment is completely within the query range, return the segment's value
+        return seg[index];
+    }
+    
+    int mid = lo + (hi - lo) / 2;
+    int left_query = query(2 * index + 1, lo, mid, L, R, 1 - do_or);
+    int right_query = query(2 * index + 2, mid + 1, hi, L, R, 1 - do_or);
+    
+    if (do_or) {
+        return left_query | right_query;
+    } else {
+        return left_query ^ right_query;
+    }
+}
+
+int32_t main() {
     sped
-    int t;
-   	t=1;
-    while(t--){
-    	int n,q;cin>>n>>q;
-    	int sz=(1LL<<n);
-    	vector<int> v(sz);
-    	for(int i=0;i<sz;++i)cin>>v[i];
-    	seg.resize(4*sz+1);
-    	if(n%2==0)build(0,0,sz-1,v,0);
-    	else build(0,0,sz-1,v,1);
-    	while(q--){
-    		int i,val;cin>>i>>val;
-    		i--;
-    		if(n%2==0){
-    			update(0,0,sz-1,i,val,0);
-    			v[i]=val;
-    		}else{
-    			update(0,0,sz-1,i,val,1);
-    			v[i]=val;
-    		}
-    		cout<<seg[0]<<'\n';
-    	}
+    int n, q;
+    cin >> n >> q;
+    int sz = (1LL << n);
+    vector<int> v(sz);
+    for (int i = 0; i < sz; ++i) cin >> v[i];
+    seg.resize(4 * sz + 1);
+    
+    if (n % 2 == 0) build(0, 0, sz - 1, v, 0);
+    else build(0, 0, sz - 1, v, 1);
+    
+    while (q--) {
+        int type;
+        cin >> type;
+        if (type == 1) {  // Update operation
+            int i, val;
+            cin >> i >> val;
+            i--;
+            if (n % 2 == 0) {
+                update(0, 0, sz - 1, i, val, 0);
+                v[i] = val;
+            } else {
+                update(0, 0, sz - 1, i, val, 1);
+                v[i] = val;
+            }
+            cout << seg[0] << '\n';
+        } else if (type == 2) {  // Range query operation
+            int L, R;
+            cin >> L >> R;
+            L--; R--;
+            int result;
+            if (n % 2 == 0) {
+                result = query(0, 0, sz - 1, L, R, 0);
+            } else {
+                result = query(0, 0, sz - 1, L, R, 1);
+            }
+            cout << result << '\n';
+        }
     }
 }
